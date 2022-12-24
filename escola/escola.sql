@@ -81,3 +81,31 @@ update curso set professor_id = 1 where id = 1;
 update curso set professor_id = 2 where id = 2;
 
 select * from curso;
+
+use escola;
+
+create table matricula(
+	aluno_id bigint not null,
+    curso_id bigint not null,
+    data_matricula date not null
+) engine=InnoDB;
+
+select * from aluno;
+select * from curso;
+
+insert into matricula
+	(aluno_id, curso_id, data_matricula)
+values
+	(1, 1, '2022-12-22');
+    
+insert into matricula
+	(aluno_id, curso_id, data_matricula)
+values
+	(1, 2, '2022-12-30');
+    
+insert into matricula
+	(aluno_id, curso_id, data_matricula)
+values
+	(2, 2, '2022-12-17');
+    
+select * from matricula;
