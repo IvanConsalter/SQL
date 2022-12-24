@@ -65,3 +65,19 @@ values
     
 select * from professor;
 select nome, valor_hora from professor;
+
+use escola;
+
+alter table curso
+	add column professor_id bigint,
+    add constraint fk_professor_id
+		foreign key (professor_id)
+        references professor(id);
+	
+select * from curso;
+select * from professor;
+
+update curso set professor_id = 1 where id = 1;
+update curso set professor_id = 2 where id = 2;
+
+select * from curso;
