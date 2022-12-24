@@ -26,3 +26,42 @@ create table professor(
     valor_hora decimal(10,2) not null,
     certificados varchar(255)
 ) engine=InnoDB;
+
+insert into aluno
+	(nome, email, cpf, telefone, data_nascimento)
+values
+	('Bernado Soares', 'bernado@bernado.com', '23622673001', '11812812274', '1998-02-23');
+    
+insert into aluno
+	(nome, email, cpf, data_nascimento)
+values
+	('Laura Neves', 'laura@laura.com', '62715059884', '2000-05-21');
+    
+select * from aluno;
+select nome, email, data_nascimento from aluno;
+
+insert into curso
+	(nome, carga_horaria, preco)
+values
+	('Java POO', 32, 29.90);
+
+insert into curso
+	(nome, carga_horaria, preco)
+values
+	('Angular', 12, 39.90);	
+    
+select * from curso;
+select nome, preco from curso;
+
+insert into professor
+	(nome, email, valor_hora)
+values
+	('Nathan Viana', 'nathan@nathan.com', 14.00);
+    
+insert into professor
+	(nome, email, valor_hora)
+values
+	('Julia Silva', 'julia@julia.com', 11.50);
+    
+select * from professor;
+select nome, valor_hora from professor;
