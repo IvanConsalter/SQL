@@ -70,6 +70,55 @@ update pedido set cliente_id = 2 where id = 3;
 
 select * from pedido;
 
+use pedido_venda;
+
+create table produto(
+	id bigint not null primary key auto_increment,
+    nome varchar(255) not null,
+    valor_unitario decimal(10,2) not null,
+    quantidade_estoque integer not null
+) engine=InnoDB;
+
+create table item_pedido(
+	pedido_id bigint not null,
+    produto_id bigint not null,
+	quantidade integer not null,
+    primary key(pedido_id, produto_id),
+    foreign key(pedido_id)
+		references pedido(id),
+	foreign key(produto_id)
+		references produto(id)
+) engine=InnoDB;
+
+insert into produto
+	(nome, valor_unitario, quantidade_estoque)
+values
+	('Coca Cola', 7.5, 30);
+    
+insert into produto
+	(nome, valor_unitario, quantidade_estoque)
+values
+	('Biz', 5.5, 50);
+    
+select * from produto;
+
+insert into item_pedido
+	(pedido_id, produto_id, quantidade)
+values
+	(2, 1, 2);
+
+insert into item_pedido
+	(pedido_id, produto_id, quantidade)
+values
+	(2, 2, 4);
+    
+insert into item_pedido
+	(pedido_id, produto_id, quantidade)
+values
+	(3, 1, 6);
+    
+select * from item_pedido;
+
 
 
 
