@@ -56,6 +56,21 @@ values
 select * from pedido;
 select valor_frete, valor_total from pedido;
 
+alter table pedido
+	add column cliente_id bigint,
+    add constraint fk_cliente_id
+		foreign key (cliente_id)
+        references cliente(id);
+        
+select * from cliente;
+        
+update pedido set cliente_id = 1 where id = 1;
+update pedido set cliente_id = 1 where id = 2;
+update pedido set cliente_id = 2 where id = 3;
+
+select * from pedido;
+
+
 
 
 
