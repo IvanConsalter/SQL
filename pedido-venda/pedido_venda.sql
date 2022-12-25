@@ -158,3 +158,24 @@ select pr.nome
     and pe.id = it.pedido_id
     and it.produto_id = pr.id
     and cl.nome = 'Maria da Silva';
+    
+use pedido_venda;
+
+alter table pedido
+	add column forma_pagamento varchar(50) not null;
+    
+alter table pedido 
+	add column status varchar(50) not null default 'ORCAMENTO';
+    
+insert into pedido 
+	(data_criacao, data_entrega, valor_frete, valor_total, cliente_id, forma_pagamento)
+values
+	(now(), '2022-12-30', 10.00, 56.99, 1, 'CREDITO');
+    
+insert into pedido 
+	(data_criacao, data_entrega, valor_frete, valor_total, cliente_id, forma_pagamento, status)
+values
+	(now(), '2022-05-01', 18.00, 156.99, 1, 'PIX', 'CANCELADO');
+    
+select * from pedido;
+
