@@ -206,3 +206,11 @@ update pedido
     where id = 4;
 		
 select * from pedido;
+
+select sum(valor_total) as 'Valor Total'
+	from pedido;
+
+select 
+	sum(valor_total) as 'Valor Total',
+    sum(valor_frete) as 'Valor Total Frete'
+    from pedido;
