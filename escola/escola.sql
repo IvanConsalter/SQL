@@ -129,5 +129,22 @@ select al.nome as 'Nome Aluno'
     where ma.aluno_id = al.id
     and ma.curso_id = c.id
     and ma.data_matricula < '2022-12-30';
+    
+use escola;
+
+insert into curso
+	(nome, requisito, carga_horaria, preco)
+values
+	('PHP', 'Lógica de Progrmação', 22, 22.90);
+    
+insert into curso
+	(nome, carga_horaria, preco)
+values
+	('HTML/CSS', 44, 24.90);
+
+select * from curso;
+
+select sum(preco) as 'Total de preços dos cursos' from curso;
+select avg(preco) as 'Média de preços dos cursos' from curso;
 
     
