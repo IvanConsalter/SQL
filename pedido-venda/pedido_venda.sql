@@ -196,3 +196,13 @@ delete from pedido
 	where id = 6;
     
 select * from pedido;
+
+update pedido
+	set status = 'APROVADO'
+    where id = 5;
+
+update pedido
+	set forma_pagamento = 'DEBITO'
+    where id = 4;
+		
+select * from pedido;
