@@ -207,12 +207,12 @@ update pedido
 		
 select * from pedido;
 
-select sum(valor_total) as 'Valor Total'
+select avg(valor_total) as 'Valor Total'
 	from pedido;
 
 select 
-	sum(valor_total) as 'Valor Total',
-    sum(valor_frete) as 'Valor Total Frete'
+	avg(valor_total) as 'Valor Total',
+    avg(valor_frete) as 'Valor Total Frete'
     from pedido;
     
 update pedido
@@ -220,7 +220,7 @@ update pedido
 	where id = 1;
     
 select status,
-	sum(valor_total) as 'Valor Total'
+	avg(valor_total) as 'Valor Total'
 	from pedido
     group by status;
     
@@ -229,7 +229,7 @@ update pedido
  where id = 4;
 
 select date(data_criacao) as 'Data Criação',
-	sum(valor_total) as 'Valor Total'
+	avg(valor_total) as 'Valor Total'
 	from pedido
     group by date(data_criacao);
 
