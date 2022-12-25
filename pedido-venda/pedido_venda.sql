@@ -214,3 +214,23 @@ select
 	sum(valor_total) as 'Valor Total',
     sum(valor_frete) as 'Valor Total Frete'
     from pedido;
+    
+update pedido
+	set status = 'PAGO'
+	where id = 1;
+    
+select status,
+	sum(valor_total) as 'Valor Total'
+	from pedido
+    group by status;
+    
+update pedido
+	set data_criacao = '2022-12-22 18:00:00'
+ where id = 4;
+
+select date(data_criacao) as 'Data Criação',
+	sum(valor_total) as 'Valor Total'
+	from pedido
+    group by date(data_criacao);
+
+
