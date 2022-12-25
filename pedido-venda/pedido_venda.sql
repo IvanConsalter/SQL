@@ -188,3 +188,11 @@ alter table cliente
 
 explain select * from cliente
 	where nome = 'Maria da Silva';
+    
+select * from pedido
+	where status = 'CANCELADO';
+
+delete from pedido
+	where id = 6;
+    
+select * from pedido;
