@@ -109,3 +109,25 @@ values
 	(2, 2, '2022-12-17');
     
 select * from matricula;
+
+use escola;
+
+select c.nome
+	from curso c
+    , aluno al
+    , matricula ma
+    where ma.aluno_id = al.id
+    and ma.curso_id = c.id
+    and al.nome = 'Bernado Soares';
+    
+select al.nome as 'Nome Aluno'
+	, c.nome as 'Nome Curso'
+    , ma.data_matricula as 'Data Matricula'
+	from aluno al
+    , curso c
+    , matricula ma
+    where ma.aluno_id = al.id
+    and ma.curso_id = c.id
+    and ma.data_matricula < '2022-12-30';
+
+    
