@@ -179,3 +179,12 @@ values
     
 select * from pedido;
 
+explain select * from cliente;
+explain select * from cliente
+	where nome = 'Maria da Silva';
+    
+alter table cliente
+	add index index_nome(nome);
+
+explain select * from cliente
+	where nome = 'Maria da Silva';
