@@ -232,5 +232,17 @@ select date(data_criacao) as 'Data Criação',
 	avg(valor_total) as 'Valor Total'
 	from pedido
     group by date(data_criacao);
+    
+use pedido_venda;
+select * from pedido;
+
+select * from pedido
+	order by valor_total;
+    
+select * from pedido
+	order by valor_total desc;
+    
+select * from pedido
+	order by data_criacao;
 
 
