@@ -245,4 +245,21 @@ select * from pedido
 select * from pedido
 	order by data_criacao;
 
+insert into cliente
+	(nome, email, data_nascimento)
+values
+	('José da Silva', 'josesilva@gmail.com', '1988-09-10');
+    
+insert into cliente
+	(nome, email, data_nascimento)
+values
+	('João Cascavel', 'joao@gmail.com', '1985-10-20');
 
+select * from cliente
+	where nome like '%J%';
+    
+select * from cliente
+	where nome like '%jos%';
+    
+select * from cliente
+	where nome like '%joa%';
