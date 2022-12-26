@@ -263,3 +263,9 @@ select * from cliente
     
 select * from cliente
 	where nome like '%joa%';
+    
+select distinct cliente_id from pedido;
+select distinct status from pedido;
+
+select * from produto where id in (1,3);
+select * from item_pedido where pedido_id in (2,4);
