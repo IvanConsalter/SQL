@@ -147,4 +147,30 @@ select * from curso;
 select sum(preco) as 'Total de preços dos cursos' from curso;
 select avg(preco) as 'Média de preços dos cursos' from curso;
 
+use escola;
+
+insert into aluno
+	(nome, email, cpf, telefone, data_nascimento)
+values
+	('Calebe Vinicius Fábio Brito', 'cleber@gmail.com', '53917519267', '95991162614', '1993-07-10');
+
+insert into aluno
+	(nome, email, cpf, telefone, data_nascimento)
+values
+	('Evelyn Daniela Rita Almeida', 'evelyn@gmail.com', '51624906109', '61991786378', '1992-06-01');
+
+select * from aluno;
+select * from matricula;
+
+select nome, email, cpf
+	from aluno
+    where id in (select aluno_id from matricula);
+    
+select nome, email, data_nascimento
+	from aluno
+	where id in (
+		select aluno_id from matricula 
+		where data_matricula > '2022-12-17'
+    );
+
     
